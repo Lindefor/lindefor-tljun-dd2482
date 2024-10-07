@@ -8,4 +8,5 @@ nvm use 20 -y
 
 cd app 
 npm install
+cd ..
 clear 
