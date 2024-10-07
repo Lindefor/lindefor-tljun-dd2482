@@ -1,6 +1,6 @@
 {
-    "title": "--",
-    "description": "--",
+    "title": "Using Docker and Kubernets with RBAC and Kubernetes secrets",
+    "description": "Great tutorial",
     "details": {
       "intro": {
         "text": "intro.md",
@@ -12,6 +12,11 @@
         }
       ],
       "assets": {
+        "host01": [
+            {"file": "app/package-lock.json", "target": "app"},
+            {"file": "app/package.json", "target": "app"},
+            {"file": "app/app.mjs", "target": "app"}
+        ]
       }
     },
     "backend": {
