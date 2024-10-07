@@ -8,14 +8,25 @@
       },
       "steps": [
         {
-          "text": "step0.md"
+          "text": "step1.md"
+        },
+        {
+          "text": "step2.md",
+          "verify": "step2.verify.sh"
+        },
+        {
+          "text": "step3.md"
+        },
+        {
+          "text": "step4.md"
         }
       ],
       "assets": {
         "host01": [
             {"file": "app/package-lock.json", "target": "app"},
             {"file": "app/package.json", "target": "app"},
-            {"file": "app/app.mjs", "target": "app"}
+            {"file": "app/app.mjs", "target": "app"},
+            {"file": "app/Dockerfile", "target": "app"}
         ]
       }
     },
