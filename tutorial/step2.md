@@ -23,7 +23,7 @@ CMD ["node", "app.mjs"]
 
 Now, let's build the docker image. The `-t` option is used to tag our image, which let's us recognise the image later on:
 ```bash
-docker build -t express-app
+docker build -t express-app .
 ```
 You can see the image by running:
 ```bash
@@ -33,9 +33,9 @@ docker images
 ### Spinning up the container
 Now let's spin up the container and test the application
 ```bash
-docker run -d -p 80:3000 --name express-app
+docker run -d -p 80:3000 --name express-app express-app
 ```
 - `-d` flag to run in detached mode
 - `-p` to specify that docker should map the host port 3000 to port 80 in the container
 
-Let's test it: Press `Check` and see if the docker image has been correctly configured.
+After running this command you should see an output in the terminal, this is the ID of your running image. Let's test it: Press `Check` and see if the docker image has been correctly configured.

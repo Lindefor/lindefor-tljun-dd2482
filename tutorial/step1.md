@@ -12,4 +12,4 @@ In order to test it, open up a new terminal by pressing the + beside Tab1, and s
 ```bash
 curl localhost:3000
 ```
-You should see a welcoming message! Alright, we're now set to move on to the tutorial.
+You should see a welcoming message! Go back to Tab1 and enter Ctrl+c to stop the server. We're now set to move on to the tutorial.
