@@ -1,0 +1,20 @@
+{
+    "title": "--",
+    "description": "--",
+    "details": {
+      "intro": {
+        "text": "intro.md",
+        "foreground": "assets/init.sh"
+      },
+      "steps": [
+        {
+          "text": "step0.md"
+        }
+      ],
+      "assets": {
+      }
+    },
+    "backend": {
+      "imageid": "ubuntu"
+    }
+  }
