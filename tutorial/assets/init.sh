@@ -1,13 +1,12 @@
 #!/bin/bash
 
-# Disable command echoing
-set +x
-sudo apt install nodejs
-sudo apt install npm
+
+sudo apt -y install nodejs --silent
+sudo apt -y install npm --silent
 
 echo "Installting dependencies..."
 cd app
-npm install
+npm install  -y --silent
 
 
 clear 
