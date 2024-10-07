@@ -1,12 +1,11 @@
 #!/bin/bash
 
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/refs/heads/master/install.sh | bash 
 
-sudo apt -y install nodejs --silent
-sudo apt -y install npm --silent
+source ~/.bashrc
+nvm install 20 -y
+nvm use 20 -y
 
-echo "Installting dependencies..."
-cd app
-npm install  -y --silent
-
-
+cd app 
+npm install
 clear 
