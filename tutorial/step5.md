@@ -109,7 +109,6 @@ We have now created a viewer role for view-user and a developer role for dev-use
 Let's verify this with these commands:
 
 ```bash
-#Verify dev-user
 kubectl describe role developer -n dev
 ```
 
@@ -118,7 +117,6 @@ We can see that the developer can "get list watch create update delete".
 If we do the same for the viewer:
 
 ```bash
-#Verify view-user
 kubectl describe role viewer -n dev
 ```
 
