@@ -13,7 +13,7 @@ app.get('/db_pass', (req, res) => {
     res.status(500).send('Database password not set');
     return;
   }
-  res.send(`Hello World! The database password is: ${process.env.DB_PASSWORD}`);
+  res.send(`Hello World! The database password is: ${process.env.DB_PASSWORD}\n`);
 });
 
 app.listen(port, () => {
