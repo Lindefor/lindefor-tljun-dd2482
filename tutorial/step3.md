@@ -15,13 +15,13 @@ to set up a local Kubernetes cluster on your machine. Minikube simulates a cloud
 We now want to build and tag our already made docker image. Run:
 ```
 eval $(minikube docker-env)
-docker build -t express-app .
+docker build -t express-app:latest .
 ```
 
 We have now configured Docker to use Minikube's Docker daemon, which means the Docker image is built within Minikube. This avoids the need to push the image to a remote repository.
 
-Finally we need to configure our Kubernetes yaml file to specify how the application should be run.
-Create a deployment.yaml with the following content:
+Finally we need to configure our Kubernetes yaml file to specify how the application should be run. Fill the deployment.yaml file with the following content:
+
 ```
 apiVersion: apps/v1
 kind: Deployment
@@ -39,7 +39,8 @@ spec:
     spec:
       containers:
         - name: express-app
-          image: express-app
+          image: express-app:latest
+          imagePullPolicy: Never 
           ports:
             - containerPort: 3000
 ```

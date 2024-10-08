@@ -25,7 +25,8 @@
             {"file": "app/package-lock.json", "target": "app"},
             {"file": "app/package.json", "target": "app"},
             {"file": "app/app.mjs", "target": "app"},
-            {"file": "app/Dockerfile", "target": "app"}
+            {"file": "app/Dockerfile", "target": "app"},
+            {"file": "app/deployments.yaml", "target": "app"}
         ]
       }
     },
