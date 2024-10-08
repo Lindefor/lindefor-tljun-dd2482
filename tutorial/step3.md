@@ -13,6 +13,12 @@ Minikube is already started but let us check our Kubernetes cluster info to veri
 kubectl cluster-info
 ```
 
+`Note`: If this command returns Command 'kubectl' not found... This means that the installation process did not complete, which is an unintended error. In this case, please install it with:
+
+```bash
+snap install kubectl --classic
+````
+
 Minikube simulates a cloud environment, which allows us to explore Kubernetes features like deployment and scaling without needing a remote cluster.
 
 We now want to build and tag our already made docker image. Run:

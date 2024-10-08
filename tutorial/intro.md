@@ -5,4 +5,5 @@ This tutorial provides a guide to building, containerizing, and deploying a Node
 
 ### Before we get started
 There is a lot to install in order to get this tutorial up and running. Please do not proceed until the automatic installation has completed, you will know when it is done when you the terminal is cleared and all you see is :
+
 ubuntu $ 
