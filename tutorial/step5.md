@@ -1,6 +1,6 @@
 ### Implementing RBAC in Kubernetes
 
-We have now got Minikube running with Kubernetes and successfully scaled up our application. Our next goal is to set up our developer environment for different roles in our team, and we can do this using RBAC. To set up Role-Based Access Control (RBAC) in Kubernetes, we’ll create roles with specific permissions for different team members. RBAC allows you to define fine-grained access control over resources within the cluster, ensuring each role has only the permissions necessary for their specific responsibilities. This is especially useful in a team environment where different roles (e.g., developer, admin, QA) may need different levels of access.
+We have now got Minikube running with Kubernetes and successfully scaled up our application. Our next goal is to set up our developer environment for different roles in our team, and we can do this using Role-Based Access Control (RBAC). To set up RBAC in Kubernetes, we’ll create roles with specific permissions for different team members. RBAC allows you to define fine-grained access control over resources within the cluster, ensuring each role has only the permissions necessary for their specific responsibilities. This is especially useful in a team environment where different roles (e.g., developer, admin, QA) may need different levels of access.
 
 It’s good practice to create a dedicated namespace for your application’s development environment:
 
