@@ -11,7 +11,8 @@
           "text": "step1.md"
         },
         {
-          "text": "step2.md"
+          "text": "step2.md",
+          "verify": "step2.verify.sh"
         },
         {
           "text": "step3.md",
