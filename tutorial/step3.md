@@ -57,10 +57,9 @@ kubectl get pods
 ````
 We deploy the application to Kubernetes, and the verification commands confirm that both the deployment and pods (running instances of your container) are up and running.
 
-Let's now expose the ports.
+Let's now expose the port.
 ````
 kubectl expose deployment express-app-deployment --type=NodePort --port=3000 --target-port=3000
-minikube service express-app-deployment --url
 ````
 This open a specific port on all nodes to handle traffic, so that we now can access the simultaneous Docker applications running locally on Minikube.
 
