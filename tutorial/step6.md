@@ -9,20 +9,34 @@ To verify that the secret has been created, run:
 ```bash
 kubectl get secrets -n dev
 ```
-Perfect! Now, we must update our deployment to include this secret. Please update the deployment.yaml file under the containers section:
+Perfect! Now, we must update our deployment to include this secret. Please update the deployment.yaml to include the secret:
 ```yaml
-containers:
-  - name: express-app
-    image: express-app:latest
-    imagePullPolicy: Never 
-    ports:
-      - containerPort: 3000
-    env:
-      - name: DB_PASSWORD
-        valueFrom:
-          secretKeyRef:
-            name: db-password
-            key: password
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: express-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: express-app
+  template:
+    metadata:
+      labels:
+        app: express-app
+    spec:
+      containers:
+        - name: express-app
+          image: express-app:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 3000
+          env:
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: db-password
+                  key: password
 ```
 
 Now, let's apply the changes:
@@ -46,6 +60,11 @@ docker build -t express-app:latest .
 Now, let's test the application by running:
 ```bash
 curl $(minikube service express-app-deployment --url)
+```
+
+Now curl the /db_pass endpoint to see the password:
+```bash
+curl $(minikube service express-app-deployment --url)/db_pass
 ```
 
 Did you see the password? If so, congratulations! You have successfully set up and accessed secrets within Kubernetes. And with that, you have completed the tutorial. Great job! 🎉
