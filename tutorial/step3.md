@@ -1,21 +1,25 @@
 In this step we want to set up the environment to scale our application. 
-We will use Minikube is used to create a local Kubernetes cluster, which allows you to test Kubernetes deployments in your development environment. Kubernetes is widely used for container orchestration, and it makes it easier to scale, manage, and deploy applications efficiently. These steps demonstrate how to deploy and expose a simple Node.js application using Minikube, essentially simulating a real production environment.
+We will use Minikube to create a local Kubernetes cluster, which allows us to test Kubernetes deployments in our development environment. Kubernetes is widely used for container orchestration, and it makes it easier to scale, manage, and deploy applications. These steps demonstrate how to deploy and expose a simple Node.js application using Minikube, simulating a real production environment.
 
 Before we do anything we need to remove our Docker build so that it is not hogging our resources:
 ```
 docker stop express-app
 docker rm express-app
 ```
-Minikube is already started but let us check our Kubernetes cluster info to verify that it is running. Run:
+Minikube is already started but let us check our Kubernetes cluster info to verify that it is running. Run
 ```
 kubectl cluster-info
-``` 
-to set up a local Kubernetes cluster on your machine. Minikube simulates a cloud environment, which allows us to explore Kubernetes features like deployment and scaling without needing a remote cluster.
+```
+If you cannot see Minikube running then start it with 
+````
+minikube start
+````
+Minikube simulates a cloud environment, which allows us to explore Kubernetes features like deployment and scaling without needing a remote cluster.
 
 We now want to build and tag our already made docker image. Run:
 ```
-eval $(minikube docker-env)
-docker build -t express-app:latest .
+eval $(minikube docker-env) #To connect minikube to the docker environment
+docker build -t express-app:latest . #To build our docker image
 ```
 
 We have now configured Docker to use Minikube's Docker daemon, which means the Docker image is built within Minikube. This avoids the need to push the image to a remote repository.

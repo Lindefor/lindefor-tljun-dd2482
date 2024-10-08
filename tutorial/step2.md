@@ -1,5 +1,5 @@
 ### Creating the Docker container
-You will have noticed that there is also a Dockerfile present in the directory. This is where we enter the configuration in order to host the server inside a docker container. Please edit this file in order to set up the container, the contents should look like:
+You will have noticed that there is also a Dockerfile present in the directory. This is where we enter the configuration in order to host the server inside a docker container. Please edit this file in order to set up the container. You can use your preferred editor, such as vim, for this step. The contents should look like:
 ```bash
 # Dockerfile
 FROM node:20-alpine
