@@ -42,6 +42,8 @@
             {"file": "app/viewer-binding.yaml", "target": "app"},
             {"file": "app/developer-role.yaml", "target": "app"},
             {"file": "app/viewer-role.yaml", "target": "app"}
+            {"file": "flowchart.png", "target": ""}
+
         ]
       }
     },
