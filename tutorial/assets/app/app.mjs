@@ -5,7 +5,7 @@ const port = 3000;
 
 app.get('/', (req, res) => {
   const name = process.env.HOSTNAME ? process.env.HOSTNAME : 'Docker container';
-  res.send(`Hello from: ${process.env.HOSTNAME}!\n`);
+  res.send(`Hello from: ${name}!\n`);
 });
 
 app.get('/db_pass', (req, res) => {
