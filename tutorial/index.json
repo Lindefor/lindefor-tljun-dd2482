@@ -34,7 +34,11 @@
             {"file": "app/package.json", "target": "app"},
             {"file": "app/app.mjs", "target": "app"},
             {"file": "app/Dockerfile", "target": "app"},
-            {"file": "app/deployment.yaml", "target": "app"}
+            {"file": "app/deployment.yaml", "target": "app"},
+            {"file": "app/developer-binding.yaml", "target": "app"},
+            {"file": "app/viewer-binding.yaml", "target": "app"},
+            {"file": "app/developer-role.yaml", "target": "app"},
+            {"file": "app/viewer-role.yaml", "target": "app"}
         ]
       }
     },
