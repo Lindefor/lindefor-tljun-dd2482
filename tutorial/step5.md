@@ -111,10 +111,9 @@ Let's verify this with these commands:
 
 ```bash
 #Verify dev-user
-kubectl auth can-i create pods --namespace=dev --as=dev-user
-kubectl auth can-i update deployments --namespace=dev --as=dev-user
-kubectl auth can-i delete services --namespace=dev --as=dev-user
-```
+kubectl describe role developer -n dev```
+
+We can see that the 
 
 ```bash
 #Verify view-user

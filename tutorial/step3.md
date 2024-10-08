@@ -20,8 +20,10 @@ Minikube simulates a cloud environment, which allows us to explore Kubernetes fe
 
 We now want to build and tag our already made docker image. Run:
 ```bash
-eval $(minikube docker-env) #To connect minikube to the docker environment
-docker build -t express-app:latest . #To build our docker image
+#To connect minikube to the docker environment
+eval $(minikube docker-env) 
+#To build our docker image
+docker build -t express-app:latest . 
 ```
 
 We have now configured Docker to use Minikube's Docker daemon, which means the Docker image is built within Minikube. This avoids the need to push the image to a remote repository.
