@@ -6,9 +6,8 @@ Before we do anything we need to remove our Docker build so that it is not hoggi
 docker stop express-app
 docker rm express-app
 ```
-We first need to start minikube. Run:
+Minikube is already started but let us check our Kubernetes cluster info to verify that it is running. Run:
 ```
-minikube start
 kubectl cluster-info
 ``` 
 to set up a local Kubernetes cluster on your machine. Minikube simulates a cloud environment, which allows us to explore Kubernetes features like deployment and scaling without needing a remote cluster.
@@ -42,7 +41,7 @@ spec:
         - name: express-app
           image: express-app
           ports:
-            - containerPort: 80
+            - containerPort: 3000
 ```
 
 The key feature is the replicas field, which determines how many instances of the application to run. Initially, we set this to 1, but we will be scale this up to run multiple replicas to simulate how high availability and load balancing is done.
@@ -51,6 +50,7 @@ Let's apply these configurations.
 Run:
 ````
 kubectl apply -f deployment.yaml
+kubectl wait --for=condition=available --timeout=60s deployment/express-app-deployment
 kubectl get deployments
 kubectl get pods
 ````
@@ -58,7 +58,8 @@ We deploy the application to Kubernetes, and the verification commands confirm t
 
 Let's now expose the ports.
 ````
-kubectl expose deployment express-app-deployment --type=NodePort
+kubectl expose deployment express-app-deployment --type=NodePort --port=3000 --target-port=3000
+minikube service express-app-deployment --url
 ````
 This open a specific port on all nodes to handle traffic, so that we now can access the simultaneous Docker applications running locally on Minikube.
 
