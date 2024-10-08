@@ -16,7 +16,7 @@ For this tutorial, let’s define two roles within the dev namespace:
 Developer Role: This role has permissions to manage pods, services, and deployments within the dev namespace.
 Viewer Role: This role has read-only permissions, allowing team members to view resources but not make changes.
 
-Create a YAML file named developer-role.yaml:
+Modify developer-role.yaml to include this configuration:
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -30,7 +30,7 @@ rules:
   verbs: ["get", "list", "watch", "create", "update", "delete"]
 ```
 
-Create another YAML file named viewer-role.yaml:
+Do the same for viewer-role.yaml with this configuration:
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -62,7 +62,7 @@ kubectl create serviceaccount view-user -n dev
 These accounts can be used in your organization to apply to the people who need specific access. Also remember to apply the principle of least privilege, which says that no one person should get more privilige than they need to perform their duty.
 
 Lets create these role bindings.
-Create a YAML file named developer-binding.yaml:
+Add this configuration to developer-binding.yaml:
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -80,7 +80,7 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 ```
 
-Similarly, create a YAML file named viewer-binding.yaml:
+Similarly, add these configurations to viewer-binding.yaml:
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -111,15 +111,18 @@ Let's verify this with these commands:
 
 ```bash
 #Verify dev-user
-kubectl describe role developer -n dev```
+kubectl describe role developer -n dev
+```
 
-We can see that the 
+We can see that the developer can "get list watch create update delete".
+
+If we do the same for the viewer:
 
 ```bash
 #Verify view-user
-kubectl auth can-i get pods --namespace=dev --as=view-user
-kubectl auth can-i list services --namespace=dev --as=view-user
-kubectl auth can-i delete deployments --namespace=dev --as=view-user
+kubectl describe role viewer -n dev
 ```
 
-If these run correctly then we have successfully set up role bindings in our Kubernetes environment! Good job!
+We can see that the viewer can "get list watch".
+
+If these work correctly then we have successfully set up role bindings in our Kubernetes environment! We will now be able to apply these to the users in our organization to get the correct permisisons. Good job!

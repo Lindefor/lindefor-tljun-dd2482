@@ -12,10 +12,7 @@ Minikube is already started but let us check our Kubernetes cluster info to veri
 ```bash
 kubectl cluster-info
 ```
-If CoreDNS and Kubernetes control plane is running then we are good. Otherwise run
-````bash
-minikube start
-````
+
 Minikube simulates a cloud environment, which allows us to explore Kubernetes features like deployment and scaling without needing a remote cluster.
 
 We now want to build and tag our already made docker image. Run:

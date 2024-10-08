@@ -41,7 +41,6 @@ The last step is to rebuild the application and see the new functionality in act
 ```bash
 eval $(minikube docker-env)
 docker build -t express-app:latest .
-kubectl apply -f deployment.yaml
 ```
 
 Now, let's test the application by running:
