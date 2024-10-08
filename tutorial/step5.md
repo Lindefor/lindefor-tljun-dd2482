@@ -9,7 +9,6 @@ kubectl create namespace dev
 ```
 
 This isolates resources and permissions for the development environment, which is helpful when applying RBAC.
-Step 3: Define Roles for Different Team Members
 
 For this tutorial, let’s define two roles within the dev namespace:
 
